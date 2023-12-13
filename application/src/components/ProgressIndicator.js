@@ -24,6 +24,7 @@ const Circle = styled.div`
 
 export const ProgressIndicator = ({ currentStep }) => {
   return (
+    //Set according to your page, e.g. Infromation is currentStep === 1
     <ProgressIndicatorWrapper>
       <Circle active={currentStep === 1}>1</Circle>
       <Circle active={currentStep === 2}>2</Circle>
