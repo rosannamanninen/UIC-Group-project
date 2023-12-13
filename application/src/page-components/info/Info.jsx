@@ -85,7 +85,8 @@ const Info = () => {
             />
         </RemMarginVertical>
 
-
+        <br></br>
+        <br></br>
 
         <ButtonLink href="/questionnaire">Continue</ButtonLink>
         </>
