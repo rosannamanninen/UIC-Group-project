@@ -58,6 +58,12 @@ export const Bodytext = styled.p`
     }
 `;
 
+//The basic bodytext but bolded
+export const BodytextBold = styled(Bodytext)`
+    ${Bodytext};
+    font-weight: bold;
+`;
+
 // I made this for links that are separate
 export const Bodylink = styled.a`
     font-family: ${typography.body.fontFamily};
