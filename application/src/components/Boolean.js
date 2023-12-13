@@ -41,44 +41,44 @@ const UnselectedButton = styled.button`
     }
 `;
 
-    export const Boolean = ({ 
-        children,
-        onClick,
-        color,
-        border,
-        height = '50px',
-        radius = '10px',
-        width = '100px'
-      }) => {
-        const [isTrue, setIsTrue] = useState(false)
-        console.log(isTrue)
-        return(
-            <div style={{
-                display: 'flex',
-                flexDirection: 'row'
-            }}>
-               {isTrue ? (
+export const Boolean = ({
+    children,
+    onClick,
+    color,
+    border,
+    height = '50px',
+    radius = '10px',
+    width = '100px'
+}) => {
+    const [isTrue, setIsTrue] = useState(false)
+    console.log(isTrue)
+    return (
+        <div style={{
+            display: 'flex',
+            flexDirection: 'row'
+        }}>
+            {isTrue ? (
                 <>
-                    <SelectedButton color={color} border={border} width={width} height={height} radius={radius} onClick={() => setIsTrue(!isTrue)}> 
+                    <SelectedButton color={color} border={border} width={width} height={height} radius={radius} onClick={() => setIsTrue(!isTrue)}>
                         yes
                     </SelectedButton>
-              
-                    <UnselectedButton color={color} border={border} width={width} height={height} radius={radius} onClick={() => setIsTrue(!isTrue)}> 
+
+                    <UnselectedButton color={color} border={border} width={width} height={height} radius={radius} onClick={() => setIsTrue(!isTrue)}>
                         no
                     </UnselectedButton>
-                    </>
-               ) : (
+                </>
+            ) : (
                 <>
-                    <UnselectedButton color={color} border={border} width={width} height={height} radius={radius} onClick={() => setIsTrue(!isTrue)}> 
+                    <UnselectedButton color={color} border={border} width={width} height={height} radius={radius} onClick={() => setIsTrue(!isTrue)}>
                         yes
                     </UnselectedButton>
-              
-                    <SelectedButton color={color} border={border} width={width} height={height} radius={radius} onClick={() => setIsTrue(!isTrue)}> 
+
+                    <SelectedButton color={color} border={border} width={width} height={height} radius={radius} onClick={() => setIsTrue(!isTrue)}>
                         no
                     </SelectedButton>
                 </>
-               )
-        }
-            </div>
-        )
-      }
+            )
+            }
+        </div>
+    )
+}

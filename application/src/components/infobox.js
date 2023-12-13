@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { palette, typography } from "../theme";
-import { BodyButton, Bodytext, Heading2, Heading3, Heading4, Heading4Center, Bodylink } from "./shared-font-styles";
+import { palette } from "../theme";
+import { Bodytext } from "./shared-font-styles";
 
 
 const InfoWrapper = styled.div`
@@ -39,7 +39,7 @@ export const InfoBox = ({color, children}) => {
             flexDirection: 'row',
             textAlign: 'start',
             alignItems: 'center',
-            maxWidth: '450px'
+            maxWidth: '500px'
         }}>
     
         <ButtonCircle color={color}>i</ButtonCircle>

@@ -1,30 +1,30 @@
 import React from 'react'
 import styled from "styled-components";
-import { palette, typography } from "../theme";
+import { typography } from "../theme";
 
 
-    // return (
-    //     <button 
-    //       onClick={onClick}
-    //       style={{
-    //          backgroundColor: color.main,
-    //          border: border ? border : `2px solid ${color.dark}`,
-    //          borderRadius: radius,
-    //          height: height,
-    //          width: width,
-    //          fontFamily: typography.body.fontFamily,
-    //          fontSize: typography.body.fontSize,
-    //          }
-    //       }
-        
-    //     >
-    //     {children}
-    //     </button>
+// return (
+//     <button 
+//       onClick={onClick}
+//       style={{
+//          backgroundColor: color.main,
+//          border: border ? border : `2px solid ${color.dark}`,
+//          borderRadius: radius,
+//          height: height,
+//          width: width,
+//          fontFamily: typography.body.fontFamily,
+//          fontSize: typography.body.fontSize,
+//          }
+//       }
+
+//     >
+//     {children}
+//     </button>
 
 
-    //   )
+//   )
 
-    const StyledButton = styled.button`
+const StyledButton = styled.button`
     background-color: ${props => props.color.main};
     cursor: pointer;
     border: ${props => props.border};
@@ -42,20 +42,19 @@ import { palette, typography } from "../theme";
     }
 `;
 
-    export const Button = ({ 
-        children,
-        onClick,
-        color,
-        border,
-        height = '50px',
-        radius = '10px',
-        width = '100px'
-      }) => {
-        return(
-            <StyledButton color={color} border={border} width={width} height={height} radius={radius} onClick={onClick}> 
-                {children} 
-            </StyledButton>
-        )
-      }
-    
-  
+export const Button = ({
+    children,
+    onClick,
+    color,
+    border,
+    height = '50px',
+    radius = '10px',
+    width = '100px'
+}) => {
+    return (
+        <StyledButton color={color} border={border} width={width} height={height} radius={radius} onClick={onClick}>
+            {children}
+        </StyledButton>
+    )
+}
+
