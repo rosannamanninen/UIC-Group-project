@@ -3,6 +3,7 @@ import { RadioButtonGroup } from '../../components/Radio'
 import { palette } from '../../theme';
 import { Bodytext, BodytextBold, Heading2, Heading3, Bodylink } from "../../components/shared-font-styles";
 import { RemMarginVertical } from "../../components/divs";
+import { ProgressIndicator } from "../../components/ProgressIndicator.js";
 import styled from 'styled-components'
 
 const Info = () => {
@@ -47,6 +48,9 @@ const Info = () => {
 
     return (
         <>
+            
+        <ProgressIndicator currentStep={1}/>
+            
         <Heading2>Information</Heading2>
         <RemMarginVertical>
             <Bodytext>Respiratory tract infection</Bodytext>
