@@ -10,6 +10,15 @@ export const NoStyleWrapper = styled.div`
     margin: 2rem 0rem;
 `
 
+// wrapper with no additional styles, smaller margin
+export const NoStyleWrapper2 = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    width: 700px;
+    margin: 0rem 0rem;
+`
+
 // outer wrapper white
 export const WhiteWrapper = styled.div`
     display: flex;
@@ -83,4 +92,12 @@ export const ContentAlignStart = styled.div`
     flex-direction: row;
     justify-content: start;
     align-items: center;
+`
+
+// wrapper for aligning something to vertically
+export const ContentAlignVertical = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
 `

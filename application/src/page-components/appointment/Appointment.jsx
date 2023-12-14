@@ -1,11 +1,13 @@
 import { ButtonLink } from "../../components/ButtonLink";
-import { Heading2, Heading4} from "../../components/shared-font-styles.js";
-import { ContentAlignStart, NoStyleWrapper, SmallMargin } from "../../components/divs.js";
+import { Heading2, Heading4, SmallText} from "../../components/shared-font-styles.js";
+import { ContentAlignStart, NoStyleWrapper, SmallMargin, NoStyleWrapper2, ContentAlignVertical } from "../../components/divs.js";
 import {TextInput} from '../../components/TextInput'
 import { palette } from '../../theme';
 import { StyledSelect } from "../../components/form-styles";
 import {Switch} from '../../components/Switch'
 import React, { useState } from "react";
+import calendar from '../../assets/calendar.png'
+import times from '../../assets/times.png'
 
 
 
@@ -19,34 +21,50 @@ const Appointment = () => {
 
         <>
         <Heading2>Book an appointment</Heading2>
-        <NoStyleWrapper>
+        <NoStyleWrapper2>
       
-        <SmallMargin><Heading4>Practitioner</Heading4></SmallMargin>
+        <Heading4>Practitioner</Heading4>
         <StyledSelect>
                 <option value="0">Juha Aalto</option>
                 <option value="0">Anna Niemi</option>
                 <option value="0">Emma Virtanen</option>
          </StyledSelect>
-        </NoStyleWrapper>
-
-
-
-        <NoStyleWrapper>
-        <SmallMargin><Heading4>Name </Heading4>  </SmallMargin>
+        </NoStyleWrapper2>
+        
+        <NoStyleWrapper2>
+        
         <ContentAlignStart>
-      
-        <SmallMargin><p>First name </p>  </SmallMargin>
-        <TextInput placeholder="first name" size="2px" color={palette.primary} type="number" />
-        <SmallMargin><p>Last name   </p></SmallMargin>
-        <TextInput placeholder="last name" size="2px" color={palette.primary} type="number" />
+        <ContentAlignVertical>
+        <Heading4>Appointment date</Heading4>
+        <img style={{ width: "60%", height: "60%", margin: "20px"}} src={calendar} />
+        </ContentAlignVertical>
+        
+        <ContentAlignVertical>
+        <Heading4>Appointment time</Heading4>
+        <img style={{ width: "60%", height: "60%", margin: "20px"}} src={times} /> 
+        </ContentAlignVertical>
         </ContentAlignStart>
-        </NoStyleWrapper>
+        </NoStyleWrapper2>
+
+        <NoStyleWrapper2>
+        <Heading4>Name </Heading4> 
+        <ContentAlignStart>
+        <ContentAlignVertical>
+        <TextInput placeholder="first name" size="2px" color={palette.primary} type="number" />
+        <SmallText>First name </SmallText> 
+        </ContentAlignVertical>
+        <ContentAlignVertical>
+        <TextInput placeholder="last name" size="2px" color={palette.primary} type="number" />
+        <SmallText>Last name </SmallText>
+        </ContentAlignVertical>
+        </ContentAlignStart>
+        </NoStyleWrapper2>
 
         
-        <NoStyleWrapper>
-        <SmallMargin><Heading4> Date of birth</Heading4></SmallMargin>
+        <NoStyleWrapper2>
+        <Heading4> Date of birth</Heading4>
         <ContentAlignStart>
-        <SmallMargin><p>Day</p></SmallMargin>
+        < ContentAlignVertical>
         <StyledSelect>
                 <option value="0">1</option>
                 <option value="0">2</option>
@@ -54,7 +72,9 @@ const Appointment = () => {
                 <option value="0">4</option>
                 <option value="0">5</option>
             </StyledSelect>
-            <SmallMargin><p>Month</p></SmallMargin>
+            <SmallText>Day</SmallText>
+            </ContentAlignVertical>   
+            <ContentAlignVertical>
         <StyledSelect>
                 <option value="0">1</option>
                 <option value="0">2</option>
@@ -62,7 +82,9 @@ const Appointment = () => {
                 <option value="0">4</option>
                 <option value="0">d</option>
             </StyledSelect>
-            <SmallMargin>  <p>Year</p></SmallMargin>
+            <SmallText>Month</SmallText>
+            </ContentAlignVertical>
+            <ContentAlignVertical>
         <StyledSelect>
 
                 <option value="0">2000</option>
@@ -71,31 +93,33 @@ const Appointment = () => {
                 <option value="0">1997</option>
                 <option value="0">1996</option>
             </StyledSelect>
+            <SmallText>Year</SmallText>
+            </ContentAlignVertical>
             </ContentAlignStart>
-            </NoStyleWrapper>
+            </NoStyleWrapper2>
             
 
-            <NoStyleWrapper>
+            <NoStyleWrapper2>
                 <ContentAlignStart>
-                <NoStyleWrapper>
-                <SmallMargin><Heading4>Gender</Heading4></SmallMargin>
+                <NoStyleWrapper2>
+                <Heading4>Gender</Heading4>
                 <StyledSelect>
                 <option value="0">Man</option>
                 <option value="0">Female</option>
                 <option value="0">Other</option>
                 <option value="0">Prefer not to say</option>
             </StyledSelect>
-            </NoStyleWrapper>
-            <NoStyleWrapper>
-                <SmallMargin><Heading4>Phone number</Heading4></SmallMargin>
+            </NoStyleWrapper2>
+            <NoStyleWrapper2>
+                <Heading4>Phone number</Heading4>
                 <TextInput placeholder="phone number" size="2px" color={palette.primary} type="number" />
-                </NoStyleWrapper>
-                <NoStyleWrapper>
-                <SmallMargin><Heading4>Email</Heading4></SmallMargin>           
+                </NoStyleWrapper2>
+                <NoStyleWrapper2>
+                <Heading4>Email</Heading4>        
         <TextInput placeholder="email" size="2px" color={palette.primary} type="number" />
-        </NoStyleWrapper>
+        </NoStyleWrapper2>
                 </ContentAlignStart>
-            </NoStyleWrapper>
+            </NoStyleWrapper2>
 
         
 
@@ -103,22 +127,29 @@ const Appointment = () => {
              
      
        
-        <NoStyleWrapper>
+        <NoStyleWrapper2>
             <Heading4>Address</Heading4>
                 <ContentAlignStart>
-                <SmallMargin> <p>Street address</p></SmallMargin>
+        <ContentAlignVertical>       
         <TextInput placeholder="street address" size="2px" color={palette.primary} type="number" />
+        <SmallText>Street address</SmallText>
+        </ContentAlignVertical> 
 
-        <SmallMargin><p>City</p></SmallMargin>
+        <ContentAlignVertical>  
         <TextInput placeholder="city" size="2px" color={palette.primary} type="number" />
+        <SmallText>City</SmallText>
+        </ContentAlignVertical>  
 
-        <SmallMargin><p>Postal code</p></SmallMargin>
+        <ContentAlignVertical>
         <TextInput placeholder="postal code" size="2px" color={palette.primary} type="number" />
+        <SmallText>Postal code</SmallText>
+        </ContentAlignVertical>
         </ContentAlignStart>
-        </NoStyleWrapper>
+        </NoStyleWrapper2>
 
-<NoStyleWrapper>
+<NoStyleWrapper2>
 <ContentAlignStart></ContentAlignStart>
+<NoStyleWrapper2>
         <Heading4>Send confirmation</Heading4>
         <p>To email</p>
         <Switch
@@ -134,13 +165,15 @@ const Appointment = () => {
             id="test-switch"
             color={palette.primary}
         />
-</NoStyleWrapper>
+        </NoStyleWrapper2>
+        <ButtonLink href="/final">Book appointment</ButtonLink>
+</NoStyleWrapper2>
 
 
 
 
 
- <ButtonLink href="/final">Book appointment</ButtonLink>
+ 
 
       
         </>

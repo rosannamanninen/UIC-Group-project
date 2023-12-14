@@ -89,3 +89,18 @@ export const BodyButton = styled.button`
     cursor: pointer;
 
 `;
+
+export const SmallText = styled.p`
+    font-family: ${typography.body.fontFamily};
+    font-weight: ${typography.body.fontWeight};
+    font-size: 0.8rem;
+    color: #000000;
+    text-align: start;
+    margin: 0.1rem;
+
+    a{
+    font-weight: bold;
+    color: ${palette.link.primary};
+      cursor: pointer;
+    }
+`;
