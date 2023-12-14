@@ -14,7 +14,16 @@ export const NoStyleWrapper = styled.div`
 export const NoStyleWrapper2 = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
+    padding: 1.2rem;
+    width: 700px;
+    margin: 0rem 0rem;
+`
+
+// wrapper with no additional styles, smaller padding
+export const NoStyleWrapper3 = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 0.5 rem;
     width: 700px;
     margin: 0rem 0rem;
 `
@@ -76,6 +85,10 @@ export const SmallMargin = styled.div`
 // margin, but only to top and bottom
 export const RemMarginVertical = styled.div`
     margin: 1rem 0rem ;
+`
+
+export const RemMarginHorizontal = styled.div`
+    margin: 0rem 1rem ;
 `
 
 // wrapper for aligning something to right (evrything inside this is aligned)
