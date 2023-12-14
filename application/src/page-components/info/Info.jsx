@@ -55,16 +55,16 @@ const Info = () => {
         <RemMarginVertical>
             <Bodytext>Respiratory tract infection</Bodytext>
             <br/>
-            <Heading3>Start the survey</Heading3>
+            <Heading3>Start the questionnaire</Heading3>
             <br/>
             <Bodytext>
-                Use this survey if you have any symptoms of infection in your nose,  throat, sinuses or lungs. You can tell if you have an infection, for example, if one of the parts of the body listed above is painful or swollen, if your voice is hoarse or you have a fever, or if your ability to do things is clearly reduced because of these symptoms. If your main symptom is coughing or sore throat, it is better to fill in the separate symptom checkers for these symptoms (coughing or throat pain / throat symptom).
+                Use this questionnaire if you have any symptoms of infection in your nose,  throat, sinuses or lungs. You can tell if you have an infection, for example, if one of the parts of the body listed above is painful or swollen, if your voice is hoarse or you have a fever, or if your ability to do things is clearly reduced because of these symptoms. If your main symptom is coughing or sore throat, it is better to fill in the separate symptom checkers for these symptoms (coughing or throat pain / throat symptom).
             </Bodytext>
             <Bodytext>
-                This survey helps you to evaluate what kind of treatment you should seek, and how you can treat your symptoms. Instructions are based on research knowledge such as the Current Care Guidelines.
+                This questionnaire helps you to evaluate what kind of treatment you should seek, and how you can treat your symptoms. Instructions are based on research knowledge such as the Current Care Guidelines.
             </Bodytext>
             <BodytextBold>
-                    The survey is not intended for emergencies, such as acute and severe chest pain, severe breathing difficulties or severe injuries. In an emergency, contact 112.
+                    The questionnaire is not intended for emergencies, such as acute and severe chest pain, severe breathing difficulties or severe injuries. In an emergency, contact 112.
             </BodytextBold>
         </RemMarginVertical>
         <br></br>
@@ -83,7 +83,7 @@ const Info = () => {
             <br></br>
 
             <RadioButtonGroup
-                title="Pre-Survey Assessment"
+                title="Pre-Questionnaire Assessment"
                 options={myAssesment}
                 onChange={radioGroupHandler}
             />
