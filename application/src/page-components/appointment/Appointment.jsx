@@ -114,11 +114,11 @@ const Appointment = () => {
             </NoStyleWrapper3>
             <NoStyleWrapper3>
                 <Heading4>Phone number</Heading4>
-                <TextInput placeholder="phone number" size="2px" color={palette.primary} type="number" width="200px" />
+                <RemMarginVertical><TextInput placeholder="phone number" size="2px" color={palette.primary} type="number" width="200px" /></RemMarginVertical>
                 </NoStyleWrapper3>
                 <NoStyleWrapper3>
                 <Heading4>Email</Heading4>        
-        <TextInput placeholder="email" size="2px" color={palette.primary} type="text" width="140px"/>
+                <RemMarginVertical><TextInput placeholder="email" size="2px" color={palette.primary} type="text" width="140px"/></RemMarginVertical>
         </NoStyleWrapper3>
                 </ContentAlignStart>
             </NoStyleWrapper2>
