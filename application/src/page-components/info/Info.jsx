@@ -33,7 +33,7 @@ const Info = () => {
 
     const myAssesment = [
         {
-          label: "I'm considering professional treatment.",
+          label: "I am considering professional treatment.",
           name: "button-types",
         },
         {
