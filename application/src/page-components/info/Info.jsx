@@ -33,11 +33,11 @@ const Info = () => {
 
     const myAssesment = [
         {
-          label: "I think I need treatment and I want to fill out the survey",
+          label: "I am considering professional treatment.",
           name: "button-types",
         },
         {
-          label: "My symptoms are suitable for self-care and I only want self-care instructions",
+          label: "I only want self-care instructions, no professional treatment needed.",
           name: "button-types",
         },
       ];
@@ -83,7 +83,7 @@ const Info = () => {
             <br></br>
 
             <RadioButtonGroup
-                title="My assessment"
+                title="Pre-Survey Assessment"
                 options={myAssesment}
                 onChange={radioGroupHandler}
             />
