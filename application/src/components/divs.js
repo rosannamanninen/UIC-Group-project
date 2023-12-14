@@ -31,6 +31,12 @@ export const WhiteWrapperInner = styled.div`
     
 `
 
+export const Gap = (gap) => {
+    return (
+    <div style={{margin: gap.gap}}></div>
+    )
+}
+
 // Results emergency situations wrapper
 export const EmergencyWrapper = styled.div`
     display: flex;

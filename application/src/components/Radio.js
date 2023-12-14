@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
 import styled from "styled-components";
 import { palette, typography } from "../theme";
 
-//TODO: not working?
+
 const StyledTitle = styled.label`
   font-weight: ${typography.subtitle.fontWeight};
   font-size: ${typography.subtitle.fontSize};
@@ -38,6 +38,8 @@ const StyledLabel = styled.label`
 `;
 
 const Wrapper = styled.div`
+  position: relative;
+  top: 30px;
   display: flex;
   gap: 0.5rem;
   align-items: center;
@@ -70,13 +72,13 @@ const StyledRadio = styled.input`
 `;
 
 
- const RadioButton = ({
-    label,
-    id,
-    disabled = false,
-    ...rest
-  }) => {
-    return (
+const RadioButton = ({
+  label,
+  id,
+  disabled = false,
+  ...rest
+}) => {
+  return (
     <Wrapper>
       <StyledRadio id={id} type="radio" disabled={disabled} {...rest} />
       <StyledLabel htmlFor={id} disabled={disabled}>
@@ -84,76 +86,76 @@ const StyledRadio = styled.input`
       </StyledLabel>
     </Wrapper>
   )
-    };
- 
-    export const RadioButtonGroup = ({ title, options, onChange }) => {
+};
+
+export const RadioButtonGroup = ({ title, options, onChange }) => {
+
+  return (
+    <div style={{ position: 'relative', padding: '2px' }}>
+      <StyledTitle style={{ position: 'absolute', top: 0 }} color={palette.primary}>{title}</StyledTitle>
+      {options.map(({ label, name, disabled }, index) => {
+        const optionId = `radio-option-${label.replace(/\s+/g, "")}`;
 
         return (
-            <>
-            <StyledTitle color={palette.primary.main}>{title}</StyledTitle>
-            {options.map(({ label, name, disabled }, index) => {
-          const optionId = `radio-option-${label.replace(/\s+/g, "")}`;
-      
-          return (
-            <RadioButton
-              value={label}
-              label={label}
-              key={optionId}
-              id={optionId}
-              name={name}
-              disabled={disabled}
-              defaultChecked={index === 0}
-              onChange={onChange}
-            />
-          );
-        })}
-        </>
-        )
-      };
+          <RadioButton
+            value={label}
+            label={label}
+            key={optionId}
+            id={optionId}
+            name={name}
+            disabled={disabled}
+            defaultChecked={index === 0}
+            onChange={onChange}
+          />
+        );
+      })}
+    </div>
+  )
+};
 
 
-      const PictureRadioButton = ({
-        image,
-        label,
-        id,
-        disabled = false,
-        ...rest
-      }) => {
-        console.log(image)
+const PictureRadioButton = ({
+  image,
+  label,
+  id,
+  disabled = false,
+  ...rest
+}) => {
+  console.log(image)
+  return (
+    <Wrapper>
+      <img src={image} width='200px' />
+      <StyledRadio id={id} type="radio" disabled={disabled} {...rest} />
+      <StyledLabel htmlFor={id} disabled={disabled}>
+        {label}
+      </StyledLabel>
+    </Wrapper>
+  )
+};
+
+
+export const PictureRadioButtonGroup = ({ title, options, onChange }) => {
+  console.log(options)
+  return (
+    <>
+      <StyledTitle color={palette.primary}>{title}</StyledTitle>
+      {options.map(({ label, name, image, disabled }, index) => {
+        const optionId = `radio-option-${label.replace(/\s+/g, "")}`;
+
         return (
-        <Wrapper>
-          <img src={image} width='200px'/>
-          <StyledRadio id={id} type="radio" disabled={disabled} {...rest} />
-          <StyledLabel htmlFor={id} disabled={disabled}>
-            {label}
-          </StyledLabel>
-        </Wrapper>
-      )
-        };
-
-
-        export const PictureRadioButtonGroup = ({ title, options, onChange }) => {
-          console.log(options)
-          return (
-              <>
-              <StyledTitle color={palette.primary.main}>{title}</StyledTitle>
-              {options.map(({ label, name, image, disabled }, index) => {
-            const optionId = `radio-option-${label.replace(/\s+/g, "")}`;
-        
-            return (
-              <PictureRadioButton
-                value={label}
-                image={image}
-                label={label}
-                key={optionId}
-                id={optionId}
-                name={name}
-                disabled={disabled}
-                defaultChecked={index === 0}
-                onChange={onChange}
-              />
-            );
-          })}
-          </>
-          )
-        };
+          <PictureRadioButton
+            value={label}
+            image={image}
+            label={label}
+            key={optionId}
+            id={optionId}
+            name={name}
+            disabled={disabled}
+            defaultChecked={index === 0}
+            onChange={onChange}
+          />
+        );
+      })}
+    </>
+  )
+};
