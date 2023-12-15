@@ -47,7 +47,7 @@ export const Bodytext = styled.p`
     font-family: ${typography.body.fontFamily};
     font-weight: ${typography.body.fontWeight};
     font-size: 1.1rem;
-    color: ${palette.primary.dark};
+    color: black;
     text-align: start;
     margin: 0.6rem;
 
@@ -62,6 +62,14 @@ export const Bodytext = styled.p`
 export const BodytextBold = styled(Bodytext)`
     ${Bodytext};
     font-weight: bold;
+    color: ${palette.primary.main}
+`;
+
+//The basic bodytext but bolded and darker
+export const BodytextBoldDark = styled(Bodytext)`
+    ${Bodytext};
+    font-weight: bold;
+    color: ${palette.link.primary}
 `;
 
 // I made this for links that are separate

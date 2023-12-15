@@ -3,6 +3,8 @@ import { ConclusionWrapper, SmallMargin, RemMarginVertical, WhiteWrapperInner, N
 import { StyledSelect } from "../../components/form-styles";
 import { BodyButton, Bodytext, Heading2, Heading3, Heading4, Heading4Center } from "../../components/shared-font-styles";
 import { useState } from "react";
+import { ProgressIndicator } from "../../components/ProgressIndicator";
+import { AlignSelf } from "../../components/divs";
 
 const dummyAnswers = [
     {
@@ -53,6 +55,8 @@ const Results = () => {
 
     return (
         <>
+        <AlignSelf> <a href="/questionnaire">{"< Back"}</a></AlignSelf> 
+        <ProgressIndicator currentStep={3}/>
         <Heading2>Results</Heading2>
         <RemMarginVertical><Bodytext>Here we will conclude the resuilts of the survey and advice you on the next steps for seeking care.</Bodytext></RemMarginVertical>
         <ConclusionWrapper $type={'case2'}>
@@ -88,7 +92,6 @@ const Results = () => {
                 <Heading4Center>112</Heading4Center>
             <Bodytext>Calling the emergency number is free of charge. You can call the emergency number from any mobile phone or landline without an area code. You can also call the emergency number from a mobile.</Bodytext>
         </EmergencyWrapper>
-        <ButtonLink href="/appointment">Continue</ButtonLink>
         </>
         
     );

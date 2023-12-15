@@ -114,3 +114,9 @@ export const ContentAlignVertical = styled.div`
     justify-content: start;
     align-items: start;
 `
+
+export const AlignSelf = styled.div`
+    align-self: start;
+    justify-self: start;
+    margin: 1rem;
+`

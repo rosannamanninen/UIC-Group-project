@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-
-
 import { RadioButtonGroup, PictureRadioButtonGroup } from '../../components/Radio'
 import { Boolean } from '../../components/Boolean'
 import { TextInput } from '../../components/TextInput'
@@ -10,6 +8,8 @@ import { InfoBox } from "../../components/infobox";
 import {  RemMarginVertical, Gap } from "../../components/divs";
 import { Bodytext, Heading2, Heading3, Bodylink } from "../../components/shared-font-styles";
 import mouth from '../../assets/mouth.jpg'
+import { ProgressIndicator } from "../../components/ProgressIndicator";
+import { AlignSelf } from "../../components/divs";
 
 const Questionnaire = () => {
 
@@ -112,6 +112,8 @@ const Questionnaire = () => {
 
   return (
     <>
+     <AlignSelf> <a href="/info">{"< Back"}</a></AlignSelf> 
+      <ProgressIndicator currentStep={2}/>
       <Heading2>Questionnaire</Heading2>
       <RemMarginVertical>
         <div style={{

@@ -29,6 +29,8 @@ export const ProgressIndicator = ({ currentStep }) => {
       <Circle active={currentStep === 1}>1</Circle>
       <Circle active={currentStep === 2}>2</Circle>
       <Circle active={currentStep === 3}>3</Circle>
+      <Circle active={currentStep === 4}>4</Circle>
+      <Circle active={currentStep === 5}>5</Circle>
     </ProgressIndicatorWrapper>
   );
 };

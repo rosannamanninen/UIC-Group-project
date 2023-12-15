@@ -8,6 +8,8 @@ import {Switch} from '../../components/Switch'
 import React, { useState } from "react";
 import calendar from '../../assets/calendar.png'
 import times from '../../assets/times.png'
+import { ProgressIndicator } from "../../components/ProgressIndicator.js";
+import { AlignSelf } from "../../components/divs.js";
 
 
 
@@ -15,14 +17,11 @@ const Appointment = () => {
     const [isToggled, setIsToggled] = useState(false)
 
     return (
-
-
-        
-
         <>
+        <AlignSelf> <a href="/results">{"< Back"}</a></AlignSelf> 
+        <ProgressIndicator currentStep={4}/>
         <Heading2>Book an appointment</Heading2>
         <NoStyleWrapper2>
-      
         <Heading4>Practitioner</Heading4>
         <StyledSelect style={{ width: "88%", height: "100%"}}>
                 <option value="0">Juha Aalto</option>

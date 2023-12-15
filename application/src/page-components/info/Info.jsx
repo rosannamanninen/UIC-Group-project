@@ -1,35 +1,35 @@
 import { ButtonLink } from "../../components/ButtonLink";
 import { RadioButtonGroup } from '../../components/Radio'
 import { palette } from '../../theme';
-import { Bodytext, BodytextBold, Heading2, Heading3, Bodylink } from "../../components/shared-font-styles";
-import { RemMarginVertical } from "../../components/divs";
+import { Bodytext, BodytextBold, Heading2, Heading3, Bodylink, BodytextBoldDark } from "../../components/shared-font-styles";
+import { AlignSelf, ContentAlignStart, RemMarginVertical } from "../../components/divs";
 import { ProgressIndicator } from "../../components/ProgressIndicator.js";
 import styled from 'styled-components'
 
-const Info = () => {
+ //Local blue bullet point list
+const BlueList = styled.ul`
+list-style-type: none;
+padding: 0;
+margin: 0.5em;
 
-    //Local blue bullet point list
-    const BlueList = styled.ul`
-    list-style-type: none;
-    padding: 0;
-    margin: 0.5em;
-  
-        li {
-        color: ${palette.primary.dark};
-        margin: 0.6rem 0;
-        position: relative;
-        padding-left: 1.5em;
-    
-        &::before {
-            content: '•';  // Bullet point character
-            color: ${palette.primary.dark};
-            font-size: 1.2em;
-            position: absolute;
-            left: 0;
-            top: 0.1em;
-        }
-        }
-        `;
+    li {
+    color: black;
+    margin: 0.6rem 0;
+    position: relative;
+    padding-left: 1.5em;
+
+    &::before {
+        content: '•';  // Bullet point character
+        color: black;
+        font-size: 1.2em;
+        position: absolute;
+        left: 0;
+        top: 0.1em;
+    }
+    }
+    `;
+
+const Info = () => {
 
     const myAssesment = [
         {
@@ -48,12 +48,13 @@ const Info = () => {
 
     return (
         <>
-            
+        <AlignSelf> <RemMarginVertical> <a href="/">{"< Back"}</a></RemMarginVertical></AlignSelf> 
+       
         <ProgressIndicator currentStep={1}/>
             
         <Heading2>Information</Heading2>
         <RemMarginVertical>
-            <Bodytext>Respiratory tract infection</Bodytext>
+            <BodytextBoldDark>You searched for: Respiratory tract infection</BodytextBoldDark>
             <br/>
             <Heading3>Start the questionnaire</Heading3>
             <br/>
