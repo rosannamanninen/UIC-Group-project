@@ -8,6 +8,7 @@ import Final from './page-components/final/Final';
 import {Routes, Route} from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import { typography } from './theme';
+import { CookiePolicy } from './page-components/landing/CookieBox';
 
 const GlobalStyle =createGlobalStyle`
 body{
@@ -24,10 +25,10 @@ function App() {
     <Routes>
       <Route exact path="/" element={<Landing />} />
       <Route path="/info" element={ <Info/>}/>
-        <Route path="/questionnaire" element={<Questionnaire />}/>
-        <Route path="/results" element={<Results/>}/>
-        <Route path="/appointment" element={<Appointment/>}/>
-        <Route path="/final" element={<Final/>}/>
+      <Route path="/questionnaire" element={<Questionnaire />}/>
+      <Route path="/results" element={<Results/>}/>
+      <Route path="/appointment" element={<Appointment/>}/>
+      <Route path="/final" element={<Final/>}/>
       </Routes>
     </div>
   );

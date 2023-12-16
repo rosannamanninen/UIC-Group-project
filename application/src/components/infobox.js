@@ -15,12 +15,11 @@ const InfoWrapper = styled.div`
 
 `
 
-const ButtonCircle = styled.button`
+export const ButtonCircle = styled.button`
   background: transparent;
   height: 20px;
   width: 20px;
   color: ${palette.error.main};
-  padding: 1rem;
   border: none;
   font-size: 15px;
   display: flex;
@@ -29,6 +28,7 @@ const ButtonCircle = styled.button`
   border: 2px solid ${palette.error.main};
   border-radius: 50%;
   padding: 10px;
+  margin: 10px
 `;
 
 export const InfoBox = ({color, children}) => {

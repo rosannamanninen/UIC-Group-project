@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { RadioButtonGroup, PictureRadioButtonGroup } from '../../components/Radio'
+import { RadioButtonGroup, PictureRadioButtonGroup, RadioButtonGroupHorizontal } from '../../components/Radio'
 import { Boolean } from '../../components/Boolean'
 import { TextInput } from '../../components/TextInput'
 import { palette } from '../../theme';
 import { ButtonLink } from "../../components/ButtonLink";
-import { InfoBox } from "../../components/infobox";
-import {  RemMarginVertical, Gap } from "../../components/divs";
-import { Bodytext, Heading2, Heading3, Bodylink } from "../../components/shared-font-styles";
+import { ButtonCircle, InfoBox } from "../../components/infobox";
+import {  RemMarginVertical, Gap, NoStyleWrapper, NoStyleWrapper2, ContentAlignStart, NoStyleWrapper3, EmergencyWrapper, ContentAlignVertical, RemMarginHorizontal } from "../../components/divs";
+import { Bodytext, Heading2, Heading3, Bodylink, BodytextBoldDark, Heading4, BodytextBold } from "../../components/shared-font-styles";
 import mouth from '../../assets/mouth.jpg'
 import { ProgressIndicator } from "../../components/ProgressIndicator";
 import { AlignSelf } from "../../components/divs";
@@ -32,6 +32,17 @@ const Questionnaire = () => {
     }
   ];
 
+  const yesNo = [
+    {
+      label: "Yes",
+      name: "button-types",
+    },
+    {
+      label: "No",
+      name: "button-types",
+    }
+  ]
+
   const wellBeing = [
     {
       label: "I can handle normal day to day tasks",
@@ -47,13 +58,13 @@ const Questionnaire = () => {
     },
   ];
 
-  const fever = [
+  const symptoms = [
     {
       label: "Less than one day",
       name: "button-types",
     },
     {
-      label: "one to three days",
+      label: "One to three days",
       name: "button-types",
     },
     {
@@ -82,7 +93,11 @@ const Questionnaire = () => {
 
   const [selectedGender, setSelectedGender] = useState(genders[0].label);
   const [selectedWellBeing, setselectedWellBeing] = useState(wellBeing[0].label);
-  const [selectedFever, setSelectedFever] = useState(fever[0].label);
+  const [selectedBreath, setSelectedBreath] = useState(yesNo[0].label);
+  const [selectedFever, setSelectedFever] = useState(yesNo[0].label);
+  const [selectedSymptoms, setSelectedSymptoms] = useState(symptoms[0].label);
+  const [selectedThroat, setSelectedThroat] = useState(yesNo[0].label);
+  const [selectedCough, setSelectedCough] = useState(yesNo[0].label);
   const [selectedPicture, setSelectedPicture] = useState(pictures[0].label);
 
 
@@ -91,14 +106,32 @@ const Questionnaire = () => {
     setSelectedGender(event.target.value);
   }
 
+  function feverGroupHandler(event) {
+    console.log(event.target.value)
+    setSelectedFever(event.target.value);
+  }
+
+  function breathGroupHandler(event) {
+    console.log(event.target.value)
+    setSelectedBreath(event.target.value);
+  }
+
   function wellBeingGroupHandler(event) {
     console.log(event.target.value)
     setselectedWellBeing(event.target.value);
   }
 
-  function feverGroupHandler(event) {
+  function symptomsGroupHandler(event) {
     console.log(event.target.value)
-    setSelectedFever(event.target.value);
+    setSelectedSymptoms(event.target.value);
+  }
+
+  function throatGroupHandler(event) {
+    setSelectedThroat(event.target.value)
+  }
+
+  function coughGroupHandler(event) {
+    setSelectedCough(event.target.value)
   }
 
   function pictureGroupHandler(event) {
@@ -108,161 +141,120 @@ const Questionnaire = () => {
 
   useEffect(() => {
     console.log(selectedGender);
-  }, [selectedGender, selectedWellBeing, selectedFever, selectedPicture]);
+  }, [selectedGender, selectedFever, selectedBreath, selectedWellBeing,selectedSymptoms, selectedThroat, selectedPicture]);
 
   return (
     <>
      <AlignSelf> <a href="/info">{"< Back"}</a></AlignSelf> 
       <ProgressIndicator currentStep={2}/>
       <Heading2>Questionnaire</Heading2>
-      <RemMarginVertical>
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}>
+      
+      <NoStyleWrapper2>
+        <Heading4>More information on the topic:</Heading4>
+        <ul >
+          <li>
+            <Bodylink href="https://www.w3schools.com/" target="_blank" >How is  this done?</Bodylink>
+          </li>
+          <li>
+            <Bodylink href="https://www.w3schools.com/" target="_blank">User manual</Bodylink>
+          </li>
+          <li>
+            <Bodylink href="https://www.w3schools.com/" target="_blank">Possible causes for a sore throat</Bodylink>
+          </li>
+        </ul>
+      </NoStyleWrapper2>
 
-          <Bodytext>More information on the topic:</Bodytext>
-          <ul >
-            <li>
-              <Bodylink href="https://www.w3schools.com/" target="_blank" >How is  this done?</Bodylink>
-            </li>
-            <li>
-              <Bodylink href="https://www.w3schools.com/" target="_blank">User manual</Bodylink>
-            </li>
-            <li>
-              <Bodylink href="https://www.w3schools.com/" target="_blank">Possible causes for a sore throat</Bodylink>
-            </li>
-          </ul>
-
-          <Gap gap='50px' />
-
-          <Heading3>Basic information</Heading3>
-
-          <Bodytext style={{ textAlign: 'center' }}>Fill in the basics</Bodytext>
-          <Gap gap='30px' />
-        </div>
-        <div style={{
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'center',
-          textAlign: 'start'
-        }}>
-          <Bodytext >Age</Bodytext>
+      <NoStyleWrapper2>
+        <Heading3>Basic information</Heading3>
+        <Bodytext>Fill in the basics</Bodytext>
+    
+        <ContentAlignStart>
+          <RemMarginVertical><Bodytext>Age</Bodytext></RemMarginVertical>
           <TextInput placeholder="Age" size="2px" width='50px' height='30px' color={palette.primary} type="number" />
+        </ContentAlignStart>
+        <ContentAlignStart>
+          <Bodytext>Gender</Bodytext>
+          <RadioButtonGroupHorizontal
+              title=""
+              options={genders}
+              onChange={genderGroupHandler}
+          />
+        </ContentAlignStart>
+        <Gap gap="10px"/>
+      </NoStyleWrapper2>
 
-          <Gap gap='50px' />
+      <NoStyleWrapper2>
+        <Heading3>General symptoms</Heading3>
+        <Bodytext>Describe your symptoms</Bodytext>
+        <EmergencyWrapper>
+          <ContentAlignStart>
+          <ButtonCircle>i</ButtonCircle>If your body temperature exeeds 37 C answer yes
+          </ContentAlignStart>
+        </EmergencyWrapper>
+
           <RadioButtonGroup
-            title="Gender"
-            options={genders}
-            onChange={genderGroupHandler}
+              title={"Do you have fever?"}
+              options={yesNo}
+              onChange={feverGroupHandler}
+          />
+          <Gap gap="30px"/>
+          <RadioButtonGroup 
+            title={"Are you facing dificulties to breath?"}
+            options={yesNo}
+            onChange={breathGroupHandler}
           />
 
-        </div>
-        <Gap gap='50px' />
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}>
-
-          <Heading3>General symptoms</Heading3>
-
-          <Bodytext style={{ textAlign: 'center' }}>Describe your symptoms</Bodytext>
-
-          <Gap gap='30px' />
-          <div style={{
-            display: 'flex',
-            flexDirection: 'row',
-            textAlign: 'start',
-            alignItems: 'center'
-          }}>
-            <Bodytext >Do you have fever?</Bodytext>
-            <Boolean
-              onClick={() => console.log('click')}
-              color={palette.primary}
-              border='none'
-            ></Boolean>
-          </div>
-          
-          <InfoBox color={palette.secondary}>If your body temperature exeeds 37 C answer yes</InfoBox>
-          <Gap gap='50px' />
-          <div style={{
-            display: 'flex',
-            flexDirection: 'row',
-            textAlign: 'start',
-            alignItems: 'center',
-            maxWidth: '450px'
-          }}>
-            <Bodytext >Are you facing dificulties to breath?</Bodytext>
-            <Boolean
-              onClick={() => console.log('click')}
-              color={palette.primary}
-              border='none'
-            ></Boolean>
-          </div>
-          <Gap gap='50px' />
+          <Gap gap="30px"/>
           <RadioButtonGroup
             title="How is your general well being?"
             options={wellBeing}
             onChange={wellBeingGroupHandler}
           />
-          <Gap gap='50px' />
+           <Gap gap="10px"/>
+      </NoStyleWrapper2>
+      
 
-          <Heading3>Symptoms</Heading3>
+      <NoStyleWrapper2>
+        <Heading3>Symptoms</Heading3>
+        <Bodytext >More spesific symptoms</Bodytext>
 
-          <Bodytext style={{ textAlign: 'center' }}>More spesific symptoms</Bodytext>
-
-          <Gap gap='30px' />
-
-          <RadioButtonGroup
+        <Gap gap="10px"/>
+        <RadioButtonGroup
             title="How long have you had symptoms?"
-            options={fever}
-            onChange={feverGroupHandler}
-            style={{width: '540px'}}
-          />
-          <Gap gap='50px' />
-          <div style={{
-            display: 'flex',
-            flexDirection: 'row',
-            textAlign: 'start',
-            alignItems: 'center'
-          }}>
-            <Bodytext >Is your throat sore? </Bodytext>
-            <Boolean
-              onClick={() => console.log('click')}
-              color={palette.primary}
-              border='none'
-            ></Boolean>
-          </div>
-          
-          <div style={{
-            display: 'flex',
-            flexDirection: 'row',
-            textAlign: 'start',
-            alignItems: 'center'
-          }}>
-            <Bodytext >Do you cough?</Bodytext>
-            <Boolean
-              onClick={() => console.log('click')}
-              color={palette.primary}
-              border='none'
-            ></Boolean>
-          </div>
-          <Gap gap='50px' />
+            options={symptoms}
+            onChange={symptomsGroupHandler}
+        />
+        <Gap gap="30px"/>
+      
+        <RadioButtonGroup
+          title={"Is your throat sore?"}
+          options={yesNo}
+          onChange={throatGroupHandler}
+        />
+        <Gap gap="30px"/> 
 
-          <PictureRadioButtonGroup
+        <RadioButtonGroup
+          title={"Do you have a cough?"}
+          options={yesNo}
+          onChange={coughGroupHandler}
+        />
+        <Gap gap="30px"/> 
+
+      </NoStyleWrapper2>
+
+      <NoStyleWrapper2>
+        <PictureRadioButtonGroup
             title="Select the option that describes you the most:"
             options={pictures}
             onChange={pictureGroupHandler}
-          />
-          <Gap gap='50px' />
-        </div>
-      </RemMarginVertical>
-      <ButtonLink style={{ alignItems: 'right' }} href="/results">Continue</ButtonLink>
+        />
+      </NoStyleWrapper2>
+
+      <NoStyleWrapper2>
+        <ButtonLink style={{ alignItems: 'right' }} href="/results">Continue</ButtonLink>
+      </NoStyleWrapper2>
+
+      
     </>
   );
 };

@@ -118,7 +118,7 @@ const Appointment = () => {
                 <NoStyleWrapper3>
                 <Heading4>Email</Heading4>        
                 <RemMarginVertical><TextInput placeholder="email" size="2px" color={palette.primary} type="text" width="140px"/></RemMarginVertical>
-        </NoStyleWrapper3>
+                </NoStyleWrapper3>
                 </ContentAlignStart>
             </NoStyleWrapper2>
 
@@ -172,15 +172,7 @@ const Appointment = () => {
         <NoStyleWrapper2>
         <ButtonLink href="/final">Book appointment</ButtonLink>
         </NoStyleWrapper2>
-</NoStyleWrapper2>
-
-
-
-
-
- 
-
-      
+</NoStyleWrapper2>      
         </>
     );
 };
