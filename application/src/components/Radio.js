@@ -71,24 +71,16 @@ const StyledRadio = styled.input`
   }
 `;
 
-
-const RadioButton = ({
-  label,
-  id,
-  disabled = false,
-  ...rest
-}) => {
-  return (
+const RadioButton = ({label, id }) => {
+  return(
     <Wrapper>
-      <StyledRadio id={id} type="radio" disabled={disabled} {...rest} />
-      <StyledLabel htmlFor={id} disabled={disabled}>
-        {label}
-      </StyledLabel>
+      <StyledRadio type="radio" id={id}/>
+      <StyledLabel for={id}>{label}</StyledLabel>
     </Wrapper>
   )
-};
+}
 
-export const RadioButtonGroup = ({ title, options, onChange }) => {
+export const RadioButtonGroup = ({ title, options, id, onChange }) => {
 
   return (
     <div style={{ position: 'relative', padding: '2px' }}>
@@ -99,9 +91,9 @@ export const RadioButtonGroup = ({ title, options, onChange }) => {
         return (
           <RadioButton
             value={label}
-            label={label}
+            label={label}ß
             key={optionId}
-            id={optionId}
+            id={id}
             name={name}
             disabled={disabled}
             defaultChecked={index === 0}

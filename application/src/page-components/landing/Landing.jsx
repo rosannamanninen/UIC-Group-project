@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { ButtonLink } from "../../components/ButtonLink";
 import { palette, typography } from "../../theme";
-import { CookiePolicy } from "./CookieBox";
 import doctors from '../../assets/doctors.webp'
 import { Gap, WhiteWrapper } from "../../components/divs";
 

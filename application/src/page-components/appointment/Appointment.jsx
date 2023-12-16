@@ -14,7 +14,8 @@ import { AlignSelf } from "../../components/divs.js";
 
 
 const Appointment = () => {
-    const [isToggled, setIsToggled] = useState(false)
+    const [isToggled1, setIsToggled1] = useState(false)
+    const [isToggled2, setIsToggled2] = useState(false)
 
     return (
         <>
@@ -153,16 +154,16 @@ const Appointment = () => {
         <Heading4>Send confirmation</Heading4>
         <p>To email</p>
         <Switch
-            toggled={isToggled}
-            onChange={e => setIsToggled(e.target.checked)}
-            id="test-switch"
+            toggled={isToggled1}
+            onChange={e => setIsToggled1(e.target.checked)}
+            id="test-switc1"
             color={palette.primary}
         />
         <p>To phone number</p>
         <Switch
-            toggled={isToggled}
-            onChange={e => setIsToggled(e.target.checked)}
-            id="test-switch"
+            toggled={isToggled2}
+            onChange={e => setIsToggled2(e.target.checked)}
+            id="test-switch2"
             color={palette.primary}
         />
        

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { RadioButtonGroup, PictureRadioButtonGroup, RadioButtonGroupHorizontal } from '../../components/Radio'
-import { Boolean } from '../../components/Boolean'
 import { TextInput } from '../../components/TextInput'
 import { palette } from '../../theme';
 import { ButtonLink } from "../../components/ButtonLink";
-import { ButtonCircle, InfoBox } from "../../components/infobox";
-import {  RemMarginVertical, Gap, NoStyleWrapper, NoStyleWrapper2, ContentAlignStart, NoStyleWrapper3, EmergencyWrapper, ContentAlignVertical, RemMarginHorizontal } from "../../components/divs";
-import { Bodytext, Heading2, Heading3, Bodylink, BodytextBoldDark, Heading4, BodytextBold } from "../../components/shared-font-styles";
+import { ButtonCircle } from "../../components/infobox";
+import {  RemMarginVertical, Gap, NoStyleWrapper2, ContentAlignStart, EmergencyWrapper } from "../../components/divs";
+import { Bodytext, Heading2, Heading3, Bodylink, Heading4} from "../../components/shared-font-styles";
 import mouth from '../../assets/mouth.jpg'
 import { ProgressIndicator } from "../../components/ProgressIndicator";
 import { AlignSelf } from "../../components/divs";
@@ -42,7 +41,7 @@ const Questionnaire = () => {
       name: "button-types",
     }
   ]
-
+  
   const wellBeing = [
     {
       label: "I can handle normal day to day tasks",
@@ -148,7 +147,6 @@ const Questionnaire = () => {
      <AlignSelf> <a href="/info">{"< Back"}</a></AlignSelf> 
       <ProgressIndicator currentStep={2}/>
       <Heading2>Questionnaire</Heading2>
-      
       <NoStyleWrapper2>
         <Heading4>More information on the topic:</Heading4>
         <ul >
@@ -179,6 +177,7 @@ const Questionnaire = () => {
               options={genders}
               onChange={genderGroupHandler}
           />
+
         </ContentAlignStart>
         <Gap gap="10px"/>
       </NoStyleWrapper2>
@@ -195,11 +194,13 @@ const Questionnaire = () => {
           <RadioButtonGroup
               title={"Do you have fever?"}
               options={yesNo}
+              id="1"
               onChange={feverGroupHandler}
           />
           <Gap gap="30px"/>
           <RadioButtonGroup 
             title={"Are you facing dificulties to breath?"}
+            id="2"
             options={yesNo}
             onChange={breathGroupHandler}
           />

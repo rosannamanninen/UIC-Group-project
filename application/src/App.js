@@ -8,7 +8,6 @@ import Final from './page-components/final/Final';
 import {Routes, Route} from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import { typography } from './theme';
-import { CookiePolicy } from './page-components/landing/CookieBox';
 
 const GlobalStyle =createGlobalStyle`
 body{
