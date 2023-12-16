@@ -71,28 +71,45 @@ const StyledRadio = styled.input`
   }
 `;
 
-
-const RadioButton = ({
-  label,
-  id,
-  disabled = false,
-  ...rest
-}) => {
-  return (
+const RadioButton = ({label, id }) => {
+  return(
     <Wrapper>
-      <StyledRadio id={id} type="radio" disabled={disabled} {...rest} />
-      <StyledLabel htmlFor={id} disabled={disabled}>
-        {label}
-      </StyledLabel>
+      <StyledRadio type="radio" id={id}/>
+      <StyledLabel for={id}>{label}</StyledLabel>
     </Wrapper>
   )
-};
+}
 
-export const RadioButtonGroup = ({ title, options, onChange }) => {
+export const RadioButtonGroup = ({ title, options, id, onChange }) => {
 
   return (
     <div style={{ position: 'relative', padding: '2px' }}>
-      <StyledTitle style={{ position: 'absolute', top: 0 }} color={palette.primary}>{title}</StyledTitle>
+      <StyledTitle style={{ position: 'absolute', top: 0 }} color="black">{title}</StyledTitle>
+      {options.map(({ label, name, disabled }, index) => {
+        const optionId = `radio-option-${label.replace(/\s+/g, "")}`;
+
+        return (
+          <RadioButton
+            value={label}
+            label={label}ß
+            key={optionId}
+            id={id}
+            name={name}
+            disabled={disabled}
+            defaultChecked={index === 0}
+            onChange={onChange}
+          />
+        );
+      })}
+    </div>
+  )
+};
+
+export const RadioButtonGroupHorizontal = ({title, options, onChange}) => {
+  
+  return (
+    <>
+      <StyledTitle style={{ position: 'absolute', top: 0 }} color="black">{title}</StyledTitle>
       {options.map(({ label, name, disabled }, index) => {
         const optionId = `radio-option-${label.replace(/\s+/g, "")}`;
 
@@ -109,10 +126,9 @@ export const RadioButtonGroup = ({ title, options, onChange }) => {
           />
         );
       })}
-    </div>
+    </>
   )
 };
-
 
 const PictureRadioButton = ({
   image,
@@ -138,7 +154,7 @@ export const PictureRadioButtonGroup = ({ title, options, onChange }) => {
   console.log(options)
   return (
     <>
-      <StyledTitle color={palette.primary}>{title}</StyledTitle>
+      <StyledTitle color="black">{title}</StyledTitle>
       {options.map(({ label, name, image, disabled }, index) => {
         const optionId = `radio-option-${label.replace(/\s+/g, "")}`;
 

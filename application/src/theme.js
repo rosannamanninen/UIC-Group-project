@@ -27,8 +27,6 @@ const palette = {
         contrastText: '#ffffff',
     },
     button: {
-        // Mitenköhän nää ois järekvää nimetä? :D // yleensä noi buttonit on just primary, secondary ... mut tbh en tiiä onko tähän hyvää vastausta 
-        //Kelasin että ois vaan toi color scheme jota annetaan propsina buttonille, mallia color={palette.primary}. Tsekkaa Button.js
         primary: '#7685D6',
         secondary: '#ffffff'
     },

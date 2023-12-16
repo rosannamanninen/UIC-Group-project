@@ -24,10 +24,10 @@ function App() {
     <Routes>
       <Route exact path="/" element={<Landing />} />
       <Route path="/info" element={ <Info/>}/>
-        <Route path="/questionnaire" element={<Questionnaire />}/>
-        <Route path="/results" element={<Results/>}/>
-        <Route path="/appointment" element={<Appointment/>}/>
-        <Route path="/final" element={<Final/>}/>
+      <Route path="/questionnaire" element={<Questionnaire />}/>
+      <Route path="/results" element={<Results/>}/>
+      <Route path="/appointment" element={<Appointment/>}/>
+      <Route path="/final" element={<Final/>}/>
       </Routes>
     </div>
   );
