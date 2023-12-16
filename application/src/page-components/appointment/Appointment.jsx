@@ -2,7 +2,7 @@ import { ButtonLink } from "../../components/ButtonLink";
 import { Heading2, Heading4, SmallText} from "../../components/shared-font-styles.js";
 import { ContentAlignStart, NoStyleWrapper, SmallMargin, NoStyleWrapper3, NoStyleWrapper2, ContentAlignVertical, RemMarginHorizontal, RemMarginVertical } from "../../components/divs.js";
 import {TextInput} from '../../components/TextInput'
-import { palette } from '../../theme';
+import { palette, typography } from '../../theme';
 import { StyledSelect } from "../../components/form-styles";
 import {Switch} from '../../components/Switch'
 import React, { useState } from "react";
@@ -10,8 +10,22 @@ import calendar from '../../assets/calendar.png'
 import times from '../../assets/times.png'
 import { ProgressIndicator } from "../../components/ProgressIndicator.js";
 import { AlignSelf } from "../../components/divs.js";
+import styled from "styled-components";
 
+const AppointmentText = styled.p`
+    font-family: ${typography.body.fontFamily};
+    font-weight: ${typography.body.fontWeight};
+    font-size: 1rem;
+    color: #000000;
+    text-align: start;
+    margin: 0.1rem;
 
+    a{
+    font-weight: bold;
+    color: ${palette.link.primary};
+      cursor: pointer;
+    }
+`;
 
 const Appointment = () => {
     const [isToggled1, setIsToggled1] = useState(false)
@@ -50,13 +64,15 @@ const Appointment = () => {
         <RemMarginVertical><Heading4>Name </Heading4> </RemMarginVertical>
         <ContentAlignStart>
         <ContentAlignVertical>
+        <AppointmentText>First name </AppointmentText> 
         <TextInput style={{ width: "288px", marginRight: "7px"}} placeholder="first name" size="2px" color={palette.primary} type="text"  />
-        <SmallText>First name </SmallText> 
+        
         </ContentAlignVertical>
         <ContentAlignVertical>
         <RemMarginHorizontal>
+        <AppointmentText>Last name </AppointmentText>
         <TextInput placeholder="last name" size="2px" color={palette.primary} type="text" width="288px" />
-        <SmallText>Last name </SmallText>
+        
         </RemMarginHorizontal>
         </ContentAlignVertical>
         </ContentAlignStart>
@@ -74,7 +90,7 @@ const Appointment = () => {
                 <option value="0">4</option>
                 <option value="0">5</option>
             </StyledSelect>
-            <RemMarginHorizontal><SmallText>Day</SmallText></RemMarginHorizontal>
+            <RemMarginHorizontal><AppointmentText>Day</AppointmentText></RemMarginHorizontal>
             </ContentAlignVertical>   
             <ContentAlignVertical>
         <StyledSelect style={{ width: "192px", height: "100%"}}>
@@ -82,9 +98,9 @@ const Appointment = () => {
                 <option value="0">2</option>
                 <option value="0">3</option>
                 <option value="0">4</option>
-                <option value="0">d</option>
+                <option value="0">5</option>
             </StyledSelect>
-            <RemMarginHorizontal><SmallText>Month</SmallText></RemMarginHorizontal>
+            <RemMarginHorizontal><AppointmentText>Month</AppointmentText></RemMarginHorizontal>
             </ContentAlignVertical>
             <ContentAlignVertical>
         <StyledSelect style={{ width: "192px", height: "100%"}}>
@@ -95,7 +111,7 @@ const Appointment = () => {
                 <option value="0">1997</option>
                 <option value="0">1996</option>
             </StyledSelect>
-            <RemMarginHorizontal><SmallText>Year</SmallText></RemMarginHorizontal>
+            <RemMarginHorizontal><AppointmentText>Year</AppointmentText></RemMarginHorizontal>
             </ContentAlignVertical>
             </ContentAlignStart>
             </NoStyleWrapper2>
@@ -128,21 +144,21 @@ const Appointment = () => {
         <NoStyleWrapper3>
            <RemMarginVertical> <Heading4>Address</Heading4></RemMarginVertical>
                 <ContentAlignStart>
-        <ContentAlignVertical>       
+        <ContentAlignVertical>   
+        <AppointmentText>Street address</AppointmentText>    
         <TextInput placeholder="street address" size="2px" color={palette.primary} type="text" width="607px" />
-        <SmallText>Street address</SmallText>
         <RemMarginVertical></RemMarginVertical>
         </ContentAlignVertical> 
         </ContentAlignStart>
         <ContentAlignStart>
         <ContentAlignVertical>  
+        <AppointmentText>City</AppointmentText>
         <TextInput placeholder="city" size="2px" color={palette.primary} type="text" width="350px"/>
-        <SmallText>City</SmallText>
         </ContentAlignVertical>  
 
         <ContentAlignVertical>
+        <RemMarginHorizontal><AppointmentText>Postal code</AppointmentText></RemMarginHorizontal>
         <RemMarginHorizontal><TextInput placeholder="postal code" size="2px" color={palette.primary} type="text" width="225px" /></RemMarginHorizontal>
-        <RemMarginHorizontal><SmallText>Postal code</SmallText></RemMarginHorizontal>
         </ContentAlignVertical>
         </ContentAlignStart>
         </NoStyleWrapper3>
